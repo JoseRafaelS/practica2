@@ -128,14 +128,15 @@ body {
 
 @media only screen and (max-width: 750px) {
   .container {
-    margin: 0px auto;
+    margin: 0px;
     padding: 0px;
     width: 100%;
-    height: 100vh;
+    height: 100%;
   }
   .container .content {
     flex-direction: column;
     width: 100%;
+    height: 100vh;
   }
   .container .content .image {
     width: 100%;
