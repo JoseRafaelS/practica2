@@ -1,0 +1,216 @@
+/* ESTILOS GENERALES */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 13px;
+}
+
+/* MIXIN */
+@mixin stylefont {
+    color: $DarkBlue;
+    font-family: "Manrope", sans-serif;
+}
+
+/* COLORS */
+$Colorcontainer:hsl(217, 19%, 35%);
+$DarkBlue:hsl(214, 17%, 51%);
+$GrayishBlue: hsl(212, 23%, 69%);
+$LightGrayishBlue: hsl(210, 46%, 95%);
+
+/* FOOTER */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.container {
+    max-width: 1100px;
+    height: 600px;
+    margin: 30px auto;
+    border-radius: 5px;
+    background-color: $LightGrayishBlue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+        width: 750px;
+        display: flex;
+        border-radius: 5px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+        .image {
+            width: 700px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                vertical-align: top;
+                border-radius: 5px 0px 0px 5px;
+            }
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 0px 5px 5px 0px;
+
+            .car-content {
+                h2 {
+                    font-size: 24px;
+                    @include stylefont();
+                }
+
+                p {
+                    margin-top: 10px;
+                    @include stylefont();
+                    font-size: 15px;
+                }
+            }
+
+            .card-footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 15px;
+
+                .avatar {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                    }
+
+                    .author {
+                        margin-left: 15px;
+
+                        h2 {
+                            @include stylefont();
+                        }
+
+                        p {
+                            @include stylefont();
+                        }
+                    }
+                }
+
+                .icon-share {
+                    width: 30px;
+                    height: 30px;
+                    background-color: $GrayishBlue;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #fff;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #fff;
+                        border: 1px solid $DarkBlue;
+                    }
+
+                }
+            }
+        }
+
+        .redes {
+            background-color: $Colorcontainer;
+            position: absolute;
+            padding: 10px;
+            display: none;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 5px;
+            width: 200px;
+            z-index: 9999;
+            top: 350px;
+            right: 240px;
+
+            img {
+                cursor: pointer;
+            }
+
+            span {
+                color: $GrayishBlue;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+            }
+        }
+    }
+}
+
+@media only screen and(max-width:750px) {
+   
+    .container {
+        margin: 0px auto;
+        padding: 0px;
+        width: 100%;
+        height: 100vh;
+
+        .content {
+            flex-direction: column;
+            width: 100%;
+
+            .image {
+                width: 100%;
+
+                img {
+                    border-radius: 5px 5px 0px 0px;
+                }
+            }
+
+            .card {
+                .car-content {
+                    h2 {
+                        font-size: 18px;
+                        @include stylefont();
+                    }
+
+                    p {
+                        margin-top: 10px;
+                        @include stylefont();
+                        font-size: 12px;
+                    }
+                }
+
+                .card-footer {
+
+
+                    .avatar {
+
+                        .author {
+                            margin-left: 15px;
+
+                            h2 {
+                                font-size: 13px;
+                                @include stylefont();
+                            }
+
+                            p {
+                                font-size: 10px;
+                                @include stylefont();
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+    }
+
+}
